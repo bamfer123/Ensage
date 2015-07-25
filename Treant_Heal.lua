@@ -15,7 +15,6 @@ config:Load()
 
 setTowerHeal = config.HealTowerToggle
 allowHealTower = config.AllowHealTower
---<<Treant Auto Heal by Rivaillle, based on AutoSupport script by Moones>>
 
 safeRange = config.SafeRange
 HealthTower = config.HealTowerPercent
@@ -59,7 +58,6 @@ function Tick(tick)
 			  allyToHeal = compareAlly(v, allyToHeal)
 			end
 		end
-		print(allowHealTower)
 		if allyToHeal then		   
 			me:SafeCastAbility(heal, allyToHeal)
 			Sleep(1000, "heal")
@@ -68,7 +66,6 @@ function Tick(tick)
 			local tower = entityList:GetEntities({classId=CDOTA_BaseNPC_Tower,team = me.team,alive=true,visible=true})
 			table.sort( tower, function (a,b) return a.health < b.health end )
 			lowestHP = tower[1]
-			print(HealthTower)
 			if lowestHP.health/lowestHP.maxHealth < HealthTower then				
 				me:CastAbility(heal,lowestHP)
 				Sleep(1000, "heal")								
