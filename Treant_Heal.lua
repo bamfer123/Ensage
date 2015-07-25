@@ -1,3 +1,5 @@
+--<<Auto Treant Heal by Rivaillle based on Auto Support by Moones>>
+
 require("libs.ScriptConfig")
 require("libs.Utils")
 
